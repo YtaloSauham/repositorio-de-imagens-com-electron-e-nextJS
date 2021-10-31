@@ -1,0 +1,24 @@
+{
+  "name": "project-electron-next",
+  "version": "0.1.0",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && npm run electron-build",
+    "start": "electron .",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "next": "12.0.1",
+    "pexels": "^1.3.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "electron": "^15.3.0",
+    "eslint": "7.32.0",
+    "eslint-config-next": "12.0.1"
+  }
+}
