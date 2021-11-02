@@ -14,20 +14,21 @@ export default function Home() {
         
        .then((res)=>res.json())
        .then((res)=>{
-        setPhotos(res.photos)
+        setPhotos(res)
        })
        .catch((err)=>{console.log(err)})
         
    },[seachPhoto])
 
 
-  function photosRender(){
 
-   return photos?.map((photos)=>{
-      <li key={photos.id}>{photos.id}</li>
-    })
- 
-   }
+   function photosRender(){
+    return photos.photos && photos?.photos.map((photos)=>{
+       return(<>
+       
+      <li key={photos.id}><img src={photos.src.large} />{photos.id}</li></>)
+      })
+     }
   
 
   return (
@@ -37,7 +38,7 @@ export default function Home() {
       </Head>
       teste
       <ul>
-        {photos.length>0?photosRender() : <p>No results</p>}
+        {photosRender()}
       </ul> 
       {console.log(photos)}
      
